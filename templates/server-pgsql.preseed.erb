@@ -1,0 +1,42 @@
+zabbix-server-pgsql	zabbix-server-pgsql/app-password-confirm password <%= @app_password %>
+zabbix-server-pgsql	zabbix-server-pgsql/password-confirm	password <%= @app_password %>
+zabbix-server-pgsql	zabbix-server-pgsql/pgsql/admin-pass	password <%= @admin_password %>
+# PostgreSQL application password for zabbix-server-pgsql:
+zabbix-server-pgsql	zabbix-server-pgsql/pgsql/app-pass	password <%= @app_password %>
+# Reinstall database for zabbix-server-pgsql?
+zabbix-server-pgsql	zabbix-server-pgsql/dbconfig-reinstall	boolean	false
+# Connection method for PostgreSQL database of zabbix-server-pgsql:
+zabbix-server-pgsql	zabbix-server-pgsql/pgsql/method	select	unix socket
+zabbix-server-pgsql	zabbix-server-pgsql/pgsql/changeconf	boolean	false
+zabbix-server-pgsql	zabbix-server-pgsql/missing-db-package-error	select	abort
+zabbix-server-pgsql	zabbix-server-pgsql/remove-error	select	abort
+zabbix-server-pgsql	zabbix-server-pgsql/upgrade-error	select	abort
+zabbix-server-pgsql	zabbix-server-pgsql/install-error	select	abort
+# Configure database for zabbix-server-pgsql with dbconfig-common?
+zabbix-server-pgsql	zabbix-server-pgsql/dbconfig-install	boolean	true
+# Do you want to purge the database for zabbix-server-pgsql?
+zabbix-server-pgsql	zabbix-server-pgsql/purge	boolean	false
+zabbix-server-pgsql	zabbix-server-pgsql/internal/reconfiguring	boolean	false
+# Deconfigure database for zabbix-server-pgsql with dbconfig-common?
+zabbix-server-pgsql	zabbix-server-pgsql/dbconfig-remove	boolean
+zabbix-server-pgsql	zabbix-server-pgsql/internal/skip-preseed	boolean	false
+zabbix-server-pgsql	zabbix-server-pgsql/remote/port	string
+zabbix-server-pgsql	zabbix-server-pgsql/pgsql/admin-user	string	postgres
+zabbix-server-pgsql	zabbix-server-pgsql/pgsql/manualconf	note
+# PostgreSQL username for zabbix-server-pgsql:
+zabbix-server-pgsql	zabbix-server-pgsql/db/app-user	string	zabbix
+zabbix-server-pgsql	zabbix-server-pgsql/pgsql/authmethod-user	select	ident
+# PostgreSQL database name for zabbix-server-pgsql:
+zabbix-server-pgsql	zabbix-server-pgsql/db/dbname	string	zabbix
+# Host name of the PostgreSQL database server for zabbix-server-pgsql:
+zabbix-server-pgsql	zabbix-server-pgsql/remote/host	select
+# Do you want to back up the database for zabbix-server-pgsql before upgrading?
+zabbix-server-pgsql	zabbix-server-pgsql/upgrade-backup	boolean	true
+# Host running the PostgreSQL server for zabbix-server-pgsql:
+zabbix-server-pgsql	zabbix-server-pgsql/remote/newhost	string
+zabbix-server-pgsql	zabbix-server-pgsql/server	note
+# Database type to be used by zabbix-server-pgsql:
+zabbix-server-pgsql	zabbix-server-pgsql/database-type	select	pgsql
+zabbix-server-pgsql	zabbix-server-pgsql/pgsql/authmethod-admin	select	ident
+# Perform upgrade on database for zabbix-server-pgsql with dbconfig-common?
+zabbix-server-pgsql	zabbix-server-pgsql/dbconfig-upgrade	boolean	true
