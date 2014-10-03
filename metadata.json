@@ -1,0 +1,20 @@
+{
+  "name": "braiins-zabbix",
+  "version": "0.1.0",
+  "author": "braiins",
+  "summary": "This module configures zabbix server and its web frontend.",
+  "license": "Apache 2.0",
+  "source": "git://github.com/braiins/puppet-zabbix.git",
+  "project_page": "https://github.com/braiins/puppet-zabbix",
+  "issues_url": "https://github.com/braiins/puppet-zabbix/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_range": ">= 4.0.0"
+    },
+    {
+      "name": "puppetlabs-postgresql",
+      "version_range": ">= 4.0.0"
+    }
+  ]
+}
