@@ -66,7 +66,7 @@ class zabbix::server (
   file { $preseed_file:
     owner => root,
     group => root,
-    mode => 400,
+    mode => '0400',
     backup  => false,
     content => template('zabbix/server-pgsql.preseed.erb'),
   }
