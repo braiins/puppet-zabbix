@@ -18,4 +18,5 @@
 #
 class zabbix::params {
   $version = '2.2'
+  $manage_package_repo = true
 }
