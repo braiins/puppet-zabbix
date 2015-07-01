@@ -29,7 +29,7 @@ class zabbix($version = $zabbix::params::version,
     apt::source { 'zabbix':
       location   => "http://repo.zabbix.com/zabbix/${version}/debian",
       repos      => 'main',
-      key        => '79EA5ED4',
+      key        => 'FBABD5FB20255ECAB22EE194D13D58E479EA5ED4',
       key_server => 'keys.gnupg.net',
     }
   }
