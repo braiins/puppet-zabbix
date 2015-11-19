@@ -26,9 +26,21 @@ class zabbix($version = $zabbix::params::version,
 ) inherits zabbix::params {
 
   if $manage_package_repo {
+    # Note for 'release' apt::source's attribute:
+    # Specifies a distribution of the Apt repository. Default: "$lsbdistcodename".
+    # Default is usually fine.
+    # Here, for Zabbix, there is no build of version 2.2 for Jessie in the official repo,
+    # so we hardcode 'wheezy' value in such case (the package is pretty installable)
+    if ($version == '2.2') and ($lsbdistcodename == 'jessie') {
+      $release = 'wheezy'
+    } else {
+      $release = $lsbdistcodename
+    }
+
     apt::source { 'zabbix':
       location   => "http://repo.zabbix.com/zabbix/${version}/debian",
       repos      => 'main',
+      release    => $release,
       key        => 'FBABD5FB20255ECAB22EE194D13D58E479EA5ED4',
       key_server => 'pgp.mit.edu',
     }
